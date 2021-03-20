@@ -10,6 +10,7 @@ function keyPressed(e) {
     if (!isKeyHeld(k)) {
         heldKeys.push(k);
         pressedKeys.push(k);
+        playNote(k);
     }
     tick();
 }
@@ -18,6 +19,7 @@ function keyReleased(e) {
     var k  = e.keyCode;
     heldKeys.splice(heldKeys.indexOf(k), 1);
     releasedKeys.push(k);
+    endNote(k);
     tick();
 }
 
